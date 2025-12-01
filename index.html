@@ -17,20 +17,14 @@
       --glass: rgba(255,255,255,0.03);
     }
 
-    /* Base */
-    *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
       background:var(--bg);
       color:var(--text);
       line-height:1.6;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      transition:background-color var(--transition-speed) ease, color var(--transition-speed) ease;
     }
 
-    /* Header */
     header{
       display:flex;
       justify-content:space-between;
@@ -40,7 +34,12 @@
       border-bottom:1px solid rgba(255,255,255,0.04);
     }
 
-    nav{display:flex; gap:0.25rem; align-items:center;}
+    nav{
+      display:flex;
+      gap:0.25rem;
+      align-items:center;
+    }
+
     nav a, .social a{
       margin:0 0.25rem;
       text-decoration:none;
@@ -54,17 +53,45 @@
       backdrop-filter: blur(4px);
     }
 
-    /* hover viola */
-    nav a:hover, .social a:hover{
+    /* Hover viola solo per nav */
+    nav a:hover{
       background:var(--accent);
       color:white;
       transform:translateY(-2px);
-      box-shadow: 0 6px 18px rgba(103,86,190,0.15);
+      box-shadow:0 6px 18px rgba(103,86,190,0.15);
     }
 
-    .social{display:flex; align-items:center; gap:0.5rem;}
+    .social{
+      display:flex;
+      align-items:center;
+      gap:0.5rem;
+    }
 
-    /* Hero */
+    /* Stile link LinkedIn separato dal resto */
+    .linkedin-icon{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:0.55rem 0.75rem;
+    }
+
+    .linkedin-icon svg{
+      width:20px;
+      height:20px;
+      fill:var(--text);
+      transition:fill var(--transition-speed) ease;
+    }
+
+    .linkedin-icon:hover{
+      background:#0072B1 !important;       /* blu richiesto */
+      transform:translateY(-2px);
+      box-shadow:0 6px 18px rgba(0,114,177,0.25);
+    }
+
+    .linkedin-icon:hover svg{
+      fill:white;
+    }
+
     .hero{
       padding:5.5rem 5% 6.5rem;
       text-align:center;
@@ -80,7 +107,8 @@
       display:block;
       margin:0 auto 1.75rem;
       border:3px solid rgba(103,86,190,0.15);
-      box-shadow: 0 6px 30px rgba(0,0,0,0.6), 0 0 30px rgba(103,86,190,0.03) inset;
+      box-shadow:0 6px 30px rgba(0,0,0,0.6),0 0 30px rgba(103,86,190,0.03) inset;
+      transition:.25s;
     }
 
     .hero h2{
@@ -97,7 +125,6 @@
       margin:0 auto;
     }
 
-    /* Projects */
     .projects{
       padding:3.5rem 5%;
       max-width:1200px;
@@ -108,7 +135,6 @@
       font-size:1.6rem;
       margin-bottom:1.4rem;
       text-align:center;
-      color:var(--text);
     }
 
     .project-grid{
@@ -122,7 +148,7 @@
       border-radius:12px;
       padding:1rem;
       overflow:hidden;
-      transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
       border:1px solid rgba(255,255,255,0.03);
       display:flex;
       flex-direction:column;
@@ -130,11 +156,10 @@
     }
 
     .project:hover{
-      transform: translateY(-8px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 8px 30px rgba(103,86,190,0.07);
+      transform:translateY(-8px);
+      box-shadow:0 10px 30px rgba(0,0,0,0.6),0 8px 30px rgba(103,86,190,0.07);
     }
 
-    /* Preview dentro la card */
     .project-preview{
       display:flex;
       gap:1rem;
@@ -144,28 +169,24 @@
     .preview-thumb{
       width:110px;
       height:70px;
-      flex:0 0 110px;
       border-radius:8px;
       object-fit:cover;
       background:#222;
-      border:1px solid rgba(255,255,255,0.03);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.6) inset;
     }
 
     .preview-content{
-      flex:1;
       display:flex;
       flex-direction:column;
-      gap:0.35rem;
     }
 
     .project h4{
       margin:0;
       font-size:1.05rem;
       font-weight:700;
-      color:var(--text);
-      transition: color var(--transition-speed) ease;
+      transition:color var(--transition-speed);
     }
+
+    .project:hover h4{ color:var(--accent); }
 
     .project p{
       margin:0;
@@ -173,15 +194,11 @@
       font-size:0.95rem;
     }
 
-    /* on hover il titolo diventa viola */
-    .project:hover h4{ color:var(--accent); }
-
     .project-meta{
       margin-top:auto;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      gap:1rem;
     }
 
     .pill{
@@ -190,7 +207,6 @@
       border-radius:999px;
       background:rgba(255,255,255,0.02);
       color:var(--text-secondary);
-      border:1px solid rgba(255,255,255,0.02);
     }
 
     .project a.cta{
@@ -201,26 +217,21 @@
       border-radius:8px;
       padding:0.45rem 0.7rem;
       border:1px solid rgba(103,86,190,0.15);
-      transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, transform 0.12s ease;
     }
 
     .project a.cta:hover{
       background:var(--accent);
-      color:#fff;
+      color:white;
       transform:translateY(-2px);
-      box-shadow: 0 8px 20px rgba(103,86,190,0.12);
+      box-shadow:0 6px 18px rgba(103,86,190,0.2);
     }
 
-    /* Contact & Footer */
     .contact{
       padding:3.5rem 5%;
       text-align:center;
       max-width:900px;
       margin:0 auto 3rem;
     }
-
-    .contact h3{ font-size:1.25rem; margin-bottom:0.6rem; color:var(--text); }
-    .contact a{ color:var(--accent); text-decoration:none; font-weight:600; }
 
     footer{
       text-align:center;
@@ -230,16 +241,17 @@
       border-top:1px solid rgba(255,255,255,0.03);
     }
 
-    /* responsive */
-    @media (max-width:700px){
-      .preview-thumb{ width:96px; height:60px; flex:0 0 96px; }
-      .hero{ padding:4.5rem 5% 5.5rem; }
-    }
-
-    @media (max-width:420px){
-      header{ padding:1rem 4%; }
-      nav a, .social a{ padding:0.45rem 0.8rem; font-size:0.95rem; }
-      .project-grid{ gap:1rem; }
+    /* 🔥 Modifica richiesta — layout mobile hero */
+    @media (max-width:650px){
+      .hero{
+        text-align:left;
+      }
+      .profile-pic{
+        margin:0 0 1.25rem 0;
+      }
+      .hero p{
+        margin-left:0;
+      }
     }
   </style>
 </head>
@@ -251,7 +263,11 @@
     </nav>
 
     <div class="social">
-      <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="linkedin-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.48 1s2.5 1.12 2.5 2.5zM.24 8.16H4.7V24H.24V8.16zM8.08 8.16h4.26v2.16h.06c.59-1.12 2.03-2.3 4.18-2.3 4.47 0 5.29 2.94 5.29 6.76V24h-4.46v-7.91c0-1.88-.03-4.29-2.61-4.29-2.62 0-3.02 2.05-3.02 4.15V24H8.08V8.16z"/>
+        </svg>
+      </a>
     </div>
   </header>
 
@@ -274,51 +290,45 @@
       <h3>Progetti selezionati</h3>
 
       <div class="project-grid">
-        <!-- Bloom App -->
-        <article class="project" aria-labelledby="p1-title">
+        <article class="project">
           <div class="project-preview">
             <img class="preview-thumb" src="https://via.placeholder.com/440x260.png?text=Bloom+Preview" alt="Anteprima Bloom">
             <div class="preview-content">
-              <h4 id="p1-title">Bloom App</h4>
-              <p>Interfacce empatiche che accompagnano l’utente in un percorso di crescita quotidiana, con micro-feedback e percorsi personalizzati.</p>
+              <h4>Bloom App</h4>
+              <p>Interfacce empatiche che accompagnano l’utente nella crescita quotidiana.</p>
             </div>
           </div>
-
           <div class="project-meta">
             <span class="pill">Mobile • UX</span>
-            <a class="cta" href="#projects">Scopri</a>
+            <a class="cta" href="#">Scopri</a>
           </div>
         </article>
 
-        <!-- Jojob Redesign -->
-        <article class="project" aria-labelledby="p2-title">
+        <article class="project">
           <div class="project-preview">
             <img class="preview-thumb" src="https://via.placeholder.com/440x260.png?text=Jojob+Preview" alt="Anteprima Jojob">
             <div class="preview-content">
-              <h4 id="p2-title">Jojob Redesign</h4>
-              <p>Riprogettazione del flow di carpooling aziendale con attenzione all’accessibilità, onboarding semplificato e viste dashboard più chiare.</p>
+              <h4>Jojob Redesign</h4>
+              <p>Riprogettazione del flow di carpooling aziendale con focus sull’accessibilità.</p>
             </div>
           </div>
-
           <div class="project-meta">
             <span class="pill">Web • Accessibilità</span>
-            <a class="cta" href="#projects">Scopri</a>
+            <a class="cta" href="#">Scopri</a>
           </div>
         </article>
 
-        <!-- Portfolio Concept -->
-        <article class="project" aria-labelledby="p3-title">
+        <article class="project">
           <div class="project-preview">
             <img class="preview-thumb" src="https://via.placeholder.com/440x260.png?text=Portfolio+Preview" alt="Anteprima Portfolio">
             <div class="preview-content">
-              <h4 id="p3-title">Portfolio Concept</h4>
-              <p>Un esperimento visivo per esplorare l’identità digitale di un designer: tipografia, gerarchia e micro-interazioni in primo piano.</p>
+              <h4>Portfolio Concept</h4>
+              <p>Ricerca visiva sull’identità digitale e sulle micro-interazioni.</p>
             </div>
           </div>
-
           <div class="project-meta">
             <span class="pill">Concept • Visual</span>
-            <a class="cta" href="#projects">Scopri</a>
+            <a class="cta" href="#">Scopri</a>
           </div>
         </article>
       </div>
