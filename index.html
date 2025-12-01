@@ -245,8 +245,13 @@
 
     @media (max-width:700px){
       .preview-thumb{ width:96px; height:60px; flex:0 0 96px; }
-      .hero{ padding:4.5rem 5% 5.5rem; text-align:left; }
-      .profile-pic{ margin:0 0 1.75rem 0; }
+      .hero{
+        padding:4.5rem 5% 5.5rem;
+        text-align:left;
+      }
+      .profile-pic{
+        margin:0 0 1.75rem 0;
+      }
     }
 
     @media (max-width:420px){
@@ -265,7 +270,6 @@
     </nav>
     <div class="social">
       <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-        <!-- icona LinkedIn SVG -->
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
           <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.76-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.27h-3v-5.604c0-1.337-.025-3.061-1.866-3.061-1.867 0-2.154 1.46-2.154 2.968v5.697h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.561 2.838-1.561 3.034 0 3.594 1.997 3.594 4.59v5.604z"/>
         </svg>
@@ -291,7 +295,6 @@
     <section class="projects" id="projects">
       <h3>Progetti selezionati</h3>
       <div class="project-grid">
-
         <article class="project" aria-labelledby="p1-title">
           <div class="project-preview">
             <img class="preview-thumb" src="https://via.placeholder.com/440x260.png?text=Bloom+Preview" alt="Anteprima Bloom">
@@ -349,7 +352,6 @@
   </footer>
 
   <script>
-    // Riduzione navbar e ombra durante lo scroll
     const header = document.querySelector('header');
     window.addEventListener('scroll', () => {
       if(window.scrollY > 50){
@@ -358,7 +360,6 @@
         header.classList.remove('scrolled');
       }
 
-      // Evidenzia voce di menu attiva
       const sections = document.querySelectorAll('main section');
       const navLinks = document.querySelectorAll('nav a');
 
