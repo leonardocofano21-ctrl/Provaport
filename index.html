@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leonardo Cofano – UX/UI Designer</title>
+  <title>Il tuo nome – UI/UX Designer</title>
   <style>
     :root{
       --bg: #0f0f13;
@@ -29,7 +29,7 @@
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
       transition:background-color var(--transition-speed) ease, color var(--transition-speed) ease;
-      padding-top: 95px;
+      padding-top: 95px; /* per compensare la navbar fixed */
     }
 
     header{
@@ -80,28 +80,20 @@
     }
 
     .social a{
-      margin:0 0.25rem;
-      text-decoration:none;
-      color:var(--text);
-      font-weight:500;
-      background:var(--glass);
-      padding:0.55rem 0.65rem; /* 🔥 ridotto leggermente il padding orizzontale */
-      border-radius:9999px;
-      transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, transform 0.18s ease;
-      border:1px solid rgba(255,255,255,0.03);
-      backdrop-filter: blur(4px);
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      min-width:42px; /* 🔥 assicura un minimo di larghezza */
-      height:42px;    /* 🔥 pulsante più bilanciato */
-    }
-
-    .social a svg{
-      display:block;
-      width:20px;
-      height:20px;
-    }
+  margin:0 0.25rem;
+  text-decoration:none;
+  color:var(--text);
+  font-weight:500;
+  background:var(--glass);
+  padding:0.55rem 1rem;
+  border-radius:9999px;
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, transform 0.18s ease;
+  border:1px solid rgba(255,255,255,0.03);
+  backdrop-filter: blur(4px);
+  display:flex;                 /* 🔥 aggiunto */
+  justify-content:center;       /* 🔥 aggiunto */
+  align-items:center;           /* 🔥 aggiunto */
+}
 
     .social a:hover{background:var(--linkedin-hover); color:white;}
 
@@ -250,7 +242,7 @@
 
     .contact{
       padding:3.5rem 5%;
-      text-align:center;
+      text-align:center; /* default centrato */
       max-width:900px;
       margin:0 auto 3rem;
     }
@@ -276,7 +268,7 @@
         margin:0 0 1.75rem 0;
       }
       .contact{
-        text-align:left;
+        text-align:left; /* solo su mobile */
       }
     }
 
@@ -296,8 +288,8 @@
     </nav>
     <div class="social">
       <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path fill="currentColor" d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.76-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.27h-3v-5.604c0-1.337-.025-3.061-1.866-3.061-1.867 0-2.154 1.46-2.154 2.968v5.697h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.561 2.838-1.561 3.034 0 3.594 1.997 3.594 4.59v5.604z"/>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.76-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.27h-3v-5.604c0-1.337-.025-3.061-1.866-3.061-1.867 0-2.154 1.46-2.154 2.968v5.697h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.561 2.838-1.561 3.034 0 3.594 1.997 3.594 4.59v5.604z"/>
         </svg>
       </a>
     </div>
@@ -356,6 +348,7 @@
             <a class="cta" href="#projects">Scopri</a>
           </div>
         </article>
+
       </div>
     </section>
 
